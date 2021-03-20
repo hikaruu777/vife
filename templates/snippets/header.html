@@ -1,0 +1,62 @@
+<header>
+    <div class="logo">
+        <h1><a href="{% url 'home' %}">VIFE</a></h1>
+    </div>
+    <div class="pc-menu" ontouchstart="">
+        <nav>
+            <ul>
+                <li class="menu-list">
+                    <h3>POSTS</h3>
+                    <ul class="submenu posts-submenu">
+                        <li><a href="{% url 'posts:index' %}">POST一覧</a></li>
+                        <li><a href="{% url 'posts:category_list' %}">Categoryから探す</a></li>
+                        <li><a href="{% url 'posts:search' %}">キーワード検索</a></li>
+                    </ul>
+                </li>
+                <li class="menu-list">
+                    <h3>TAGS</h3>
+                    <ul class="submenu">
+                    <li><a href="{% url 'home' %}">coming soon</a></li>
+               </ul>
+                </li>
+                <li class="menu-list">
+                    <h3>MAP</h3>
+                    <ul class="submenu">
+                    <li><a href="{% url 'home' %}">coming soon</a></li>
+               </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="sp-menu">
+        <span class="material-icons" id="open">menu</span>
+    </div>
+</header>
+
+<div class="overlay" ontouchstart="">
+    <span class="material-icons" id="close">close</span>
+    <nav>
+        <ul>
+            <li class="menu-list">
+                <h3>POSTS</h3>
+                <ul class="submenu posts-submenu">
+                    <li><a href="{% url 'posts:index' %}">POST一覧</a></li>
+                    <li><a href="{% url 'posts:category_list' %}">Categoryから探す</a></li>
+                    <li><a href="{% url 'posts:search' %}">キーワード検索</a></li>
+                </ul>
+            </li>
+           <li class="menu-list">
+               <h3>TAGS</h3>
+               <ul class="submenu">
+                    <li><a href="{% url 'home' %}">coming soon</a></li>
+               </ul>
+           </li>
+           <li class="menu-list">
+               <h3>MAP</h3>
+               <ul class="submenu">
+                    <li><a href="{% url 'home' %}">coming soon</a></li>
+               </ul>
+           </li>
+        </ul>
+    </nav>
+</div>

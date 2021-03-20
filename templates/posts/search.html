@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+
+{% block title %}Search Post{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1 class="category-title">Search</h1>
+    <div class="search-top">
+        <main class="search">
+            {% include 'snippets/search_form.html' %}
+        </main>
+        <aside class="sidebar">
+            {% include 'snippets/sidebar.html' %}
+        </aside>
+    </div>
+</div>
+{% endblock content %}

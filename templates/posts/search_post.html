@@ -1,0 +1,20 @@
+{% extends '_base.html' %}
+
+{% block title %}{% if query %}{{ query }}{% endif %} | {{ block.super }}{% endblock %}
+{% block descripton %}検索ワード「{% if query %}{{ query }}{% endif %}」での検索結果ページです。{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="category-title">「{% if query %}{{ query }}{% endif %}」の検索結果 ({{ page_obj.end_index }} posts)</h1>
+
+    <div class="blog-top">
+        <main class="main-content">
+            {% include "snippets/main_post_list.html" %}
+            {% include "snippets/pagination.html" %}
+        </main>
+        <aside class="sidebar">
+            {% include "snippets/sidebar.html" %}
+        </aside>
+    </div>
+</div>
+{% endblock content %}

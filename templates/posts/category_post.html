@@ -1,0 +1,18 @@
+{% extends '_base.html' %}
+
+{% block title %}"{{ category.name }}" POSTS LIST{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1 class="category-title">"{{ category.name }}" POSTS LIST</h1>
+    <div class="blog-top">
+        <main class="main-content">
+            {% include "snippets/main_post_list.html" %}
+            {% include "snippets/pagination.html" %}
+        </main>
+        <aside class="sidebar">
+            {% include "snippets/sidebar.html" %}
+        </aside>
+    </div>
+</div>
+{% endblock content %}

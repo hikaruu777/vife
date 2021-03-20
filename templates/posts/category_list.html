@@ -1,0 +1,23 @@
+{% extends '_base.html' %}
+
+{% block title %}Category List{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h2 class="category-title">Category List</h2>
+    <div class="subclass">
+        <main class="subclass-list">
+            <ul>
+                {% for category in object_list %}
+                    <li><a href="{% url 'posts:category_post' category.slug %}">{{ category.name }} ({{ category.num_posts }})</a></li>
+                {% empty %}
+                    <li>カテゴリはありません。</li>
+                {% endfor %}
+            </ul>
+        </main>
+        <aside class="sidebar">
+            {% include "snippets/sidebar.html" %}
+        </aside>
+    </div>
+</div>
+{% endblock content %}

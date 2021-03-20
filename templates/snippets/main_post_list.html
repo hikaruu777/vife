@@ -1,0 +1,18 @@
+<div class="post-container">
+    {% for post in object_list %}
+        {% if post.is_public %}
+          <article class="post-block">
+            <a href="{% url 'posts:post_detail' post.id %}" class="post-all-a"></a>
+            {% if post.image %}
+            <img src="{{ post.image.url }}" alt="{{ post.title }}">
+            {% endif %}
+            <div class="post-head">
+                <p>{{ post.category.name }}</p>
+                <h1>{{ post.title }}</h1>
+            </div>
+          </article>
+        {% endif %}
+    {% empty %}
+        <p>No Posts</p>
+    {% endfor %}
+</div>

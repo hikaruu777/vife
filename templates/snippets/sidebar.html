@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="card-header">Search</div>
+    <div class="search-content">
+        {% include 'snippets/search_form.html' %}
+    </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    Category
+  </div>
+  <ul class="list-group">
+    {% for category in categories|dictsortreversed:"num_posts"|slice:":5" %}
+    <li class="list-group-item">
+      <a href="{% url 'posts:category_post' category.slug %}" class="card-link">{{ category.name }} ({{ category.num_posts }})</a>
+    </li>
+    {% endfor %}
+  </ul>
+  <div class="card-body">
+    <a href="{% url 'posts:category_list' %}" class="card-link">カテゴリ一覧</a>
+  </div>
+</div>

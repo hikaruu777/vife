@@ -1,0 +1,536 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(240, 240, 240, 0.95);
+    color: rgba(0, 0, 0, 1);
+    font-family: Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    padding: 0 16px;
+    background: rgba(255, 255, 255, 1);
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 1);
+}
+
+header h1 {
+    font-family: Futura, sans-serif;
+    font-size: 25px;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+    line-height:50px;
+    padding: 0;
+    margin: 0;
+}
+
+header h1 a {
+    display: block;
+    line-height: 50px;
+}
+
+.logo:hover {
+    opacity: 0.7;
+}
+
+.sp-menu {
+    margin-left: auto;
+}
+
+.sp-menu #open {
+    font-size: 30px;
+    line-height: 50px;
+    cursor: pointer;
+    margin-right: 35px;
+}
+
+.sp-menu #open.hide {
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 64px;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+    z-index: 7;
+}
+
+.overlay a, .overlay h3 {
+    font-size: 14px;
+    display: block;
+    width: 80px;
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.overlay #close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.overlay ul {
+    margin: 0;
+    padding: 0;
+}
+
+.overlay li {
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .3s, transform .3s;
+}
+
+.overlay.show li {
+    opacity: 1;
+    transform: none;
+}
+
+.overlay a:hover, .overlay h3:hover {
+    background: rgba(205, 205, 205, 0.95);
+}
+
+.overlay .menu-list {
+    display: flex;
+    height: 50px;
+    width: 205px;
+}
+
+.menu-list > h3 {
+    cursor: pointer;
+}
+
+.submenu {
+    opacity: 0;
+    pointer-events: none;
+    background: rgb(160, 160, 160);
+    width: 125px;
+    display: flex;
+    flex-direction: column;
+    transition: all .3s ease;
+}
+
+.overlay .posts-submenu {
+    height: 150px;
+}
+
+.overlay .menu-list:hover .submenu {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.overlay .submenu a {
+    width: 125px;
+}
+
+.pc-menu {
+    display: none;
+}
+
+.container {
+    padding: 0 10px;
+    padding-top: 50px;
+    flex: 1;
+}
+
+.category-title {
+    padding: 10px;
+    margin: 20px 10px;
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+.post-container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+}
+
+.post-block {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background-color: rgba(255, 255, 255, 1);
+    margin: 0 0 20px 0;
+    display: block;
+}
+
+.post-all-a {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.post-block img {
+    display: block;
+    width: 100%;
+    height: 250px;
+}
+
+.post-head {
+    padding: 10px;
+}
+
+.post-head p {
+    margin: 0 0 5px 0;
+    padding: 0;
+    font-size: 14px;
+    color: rgba(130, 130, 130, 0.95);
+}
+
+.post-head h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+footer {
+    display: flex;
+    padding: 0 16px;
+    background: rgba(255, 255, 255, 1);
+    height: 64px;
+    justify-content: center;
+    z-index: 4;
+}
+
+.footer-menu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    line-height: 64px;
+}
+
+.footer-menu ul a {
+    display: block;
+    width: 100px;
+    height: calc(100px / 3);
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.footer-menu ul a:hover {
+    opacity: 0.5;
+}
+
+.sidebar {
+    background-color: rgba(255, 255, 255, 1);
+    padding: 10px;
+    display: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.card {
+    margin: 0;
+    padding: 10px;
+    background-color: rgb(160, 160, 160);
+    margin-top: 10px;
+}
+
+.card-header {
+    color: rgba(255, 255, 255, 1);
+    font-size: 18px;
+    border-bottom: solid rgb(255, 255, 255);
+    margin-bottom: 10px;
+}
+
+.list-group {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.list-group-item {
+    margin-top: 5px;
+}
+
+.card-body {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.list-group-item a, .card-body a {
+    color: rgba(255, 255, 255, 1);
+}
+
+.list-group-item > a:hover, .card-body > a:hover {
+    opacity: 0.5;
+}
+
+.post-detail-top {
+    margin: 10px 0;
+}
+
+.post-detail, .subclass-list, .search {
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+.search {
+    height: 100%;
+}
+
+.search form {
+    display: flex;
+    flex-direction: column;
+}
+
+.search input {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    margin: 20px auto;
+}
+
+.search button {
+    width: 150px;
+    height: 30px;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.post-detail > h1 {
+    font-size: 24px;
+}
+
+.post-detail-subhead a {
+    color: rgba(130, 130, 130, 0.95);
+}
+
+.post-detail h2 {
+    font-size: 18px;
+    background:  rgb(215, 215, 215);
+    padding: 10px;
+}
+
+.subclass-list > ul {
+    margin: 0;
+    padding: 0;
+}
+
+.subclass-list li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.subclass-list a:hover {
+    opacity: 0.5;
+}
+
+@media (min-width: 600px) {
+    header {
+        height: 80px;
+    }
+
+    header h1 {
+        font-size: 40px;
+        line-height: 80px;
+    }
+
+    header h1 a {
+        line-height: 80px;
+    }
+
+    .pc-menu {
+        display: flex;
+        margin-left: auto;
+        align-items: flex-end;
+    }
+
+    .pc-menu ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .pc-menu a, .pc-menu h3{
+        display: block;
+        width: 150px;
+        line-height: 50px;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .pc-menu a:hover, .pc-menu h3:hover {
+        background: rgba(205, 205, 205, 0.95);
+    }
+
+    .sp-menu {
+        display: none;
+    }
+
+    .menu-list {
+        position: relative;
+        height: 50px;
+    }
+
+    .submenu {
+        position: absolute;
+        width: 100%;
+        top: 50px;
+        right: 0;
+        background: rgb(160, 160, 160);
+    }
+
+    .pc-menu .menu-list:hover .submenu {
+        pointer-events: auto;
+        opacity: 1;
+    }
+
+    .container {
+        padding: 0 20px;
+        padding-top: 80px;
+    }
+    
+    .post-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .post-block {
+        width: 48%;
+    }
+
+    .blog-top, .post-detail-top, .subclass, .search-top {
+        display: flex;
+    }
+
+    main .post-container {
+        display: flex;
+        flex-direction: column;
+        margin-right: 300px;
+    }
+
+    main .post-block {
+        width: 100%;
+    }
+
+    .sidebar {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        width: 260px;
+        right: 20px;
+        margin-left: 20px;
+    }
+
+    .post-detail {
+        display: block;
+        width: 100%;
+        margin-right: 270px;
+    }
+
+    .post-detail-top .sidebar {
+        width: 240px;
+    }
+
+    .subclass-list, .search {
+        display: block;
+        width: 100%;
+        margin-right: 300px;
+    }
+}
+
+@media (min-width: 900px) {
+    main .post-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    main .post-block {
+        width: 48%;
+    }
+
+    .post-detail-subhead {
+        display: flex;
+    }
+
+    .post-detail-category {
+        margin-right: 20px;
+    } 
+
+    .post-detail {
+        margin-right: 300px;
+    }
+
+    .post-detail-top .sidebar {
+        width: 260px;
+    }
+
+    .subclass-list > ul {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .subclass-list li, .subclass-list a {
+        width: 50%;
+        box-sizing: border-box;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        position: relative;
+        width: 1200px;
+        margin: 0 auto;
+    }    
+
+    .sidebar {
+        position: absolute;
+    }
+    
+}
+

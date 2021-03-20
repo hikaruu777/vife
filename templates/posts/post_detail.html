@@ -1,0 +1,21 @@
+{% extends '_base.html' %}
+
+{% block title %}{{ post.title }}{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="post-detail-top">
+      <main class="post-detail">
+        <h1>{{ post.title }}</h1>
+        <div class="post-detail-subhead">
+            <p class="post-detail-category">category: <a href="{% url 'posts:category_post' post.category.slug %}">{{ post.category.name }}</a></p>
+        </div>
+        <hr>
+        {{ post.content|safe }}
+      </main>
+      <aside class="sidebar">
+        {% include "snippets/sidebar.html" %}
+      </aside>
+    </div>
+</div>
+{% endblock content %}

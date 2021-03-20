@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}home{% endblock %}
+
+
+{% block content %}
+<div class="container">
+  <section id="posts">
+      <h2 class="category-title">LATEST POSTS</h2>
+      <div class="posts-container">
+        {% include "snippets/main_post_list.html" %}
+      </div>
+  </section>
+</div>
+{% endblock content %}
