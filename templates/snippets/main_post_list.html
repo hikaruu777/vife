@@ -2,7 +2,7 @@
     {% for post in object_list %}
         {% if post.is_public %}
           <article class="post-block">
-            <a href="{% url 'posts:post_detail' post.id %}" class="post-all-a"></a>
+            <a href="{{ post.get_absolute_url }}" class="post-all-a"></a>
             {% if post.image %}
             <img src="{{ post.image.url }}" alt="{{ post.title }}">
             {% endif %}

@@ -10,6 +10,7 @@ from posts.models import Post, Category
 
 class PostDetailView(DetailView):
     model = Post
+    template_name = 'posts/post_detail.html'
 
     def get_object(self, queryset=None):
         post = super().get_object(queryset=queryset)

@@ -100,3 +100,4 @@ media/
 *.pid
 
 Pipfile.lock
+vife_project/urls.py
